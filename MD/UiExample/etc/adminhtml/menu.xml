@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+    <menu>
+        <add id="MD_UiExample::view" title="MD Blog" module="MD_UiExample" sortOrder="50" resource="MD_UiExample::view"/>
+        <add id="MD_UiExample::menu" title="Manage Grid" module="MD_UiExample" sortOrder="20" parent="MD_UiExample::view" action="uiexample/grid/index" resource="MD_UiExample::menu"/>
+    </menu>
+</config>
