@@ -1,0 +1,8 @@
+<?php
+/** @var \Sigma\ServiceModel\Block\ServiceModel\Listing\Column\DefaultColumn $block */
+$item = $block->getItem();
+$column = $block->getColumn();
+?>
+
+<a href="<?= /* @noEscape */ $block->getCustomerMediaUrl($item->getId())?>"
+   download><?= /* @noEscape */ $item->getCustomerFileName() ?></a>

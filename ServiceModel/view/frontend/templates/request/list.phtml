@@ -1,0 +1,43 @@
+<?php
+/** @var \Sigma\ServiceModel\Block\ServiceModel\Index $block */
+$collection =$block->getRequestCollection();
+
+?>
+
+<div class="create_requests">
+    <button title="<?= /* @noEscape */ __("Create Request") ?>" class="action create-button primary"
+            onclick="window.location = '<?= /* @noEscape */ $block->getCreateUrl() ?>';return false;">
+        <span><?= /* @noEscape */ __("Create Request") ?></span>
+    </button>
+    <?php if ($collection->count()): ?>
+        <div class="table-wrapper">
+            <table class="data table hdmx__tickets-table">
+                <caption class="table-caption"><?= /* @noEscape */ __('Tickets') ?></caption>
+                <thead>
+                <tr>
+                    <?php foreach ($block->getColumns() as $name => $column): ?>
+                        <th scope="col" class="col <?= /* @noEscape */ $name ?>">
+                            <?= /* @noEscape */ $column->getLabel() ?></th>
+                    <?php endforeach ?>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach ($collection as $ticket): ?>
+                    <tr>
+                        <?php foreach ($block->getColumns() as $name => $column): ?>
+                            <td data-th="<?= /* @noEscape */ $column->getLabel() ?>
+                            " class="<?= /* @noEscape */ $name ?>">
+                                <?= $block->getColumnHtml($column, $ticket) ?>
+                            </td>
+                        <?php endforeach ?>
+                    </tr>
+                <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    <?php else: ?>
+        <div class="message info empty">
+            <span><?= /* @noEscape */ __("You don't have open tickets") ?></span>
+        </div>
+    <?php endif ?>
+</div>

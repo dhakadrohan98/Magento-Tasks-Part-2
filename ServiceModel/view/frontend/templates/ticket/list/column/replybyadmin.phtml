@@ -1,0 +1,10 @@
+<?php
+/** @var \Sigma\ServiceModel\Block\ServiceModel\Listing\Column\DefaultColumn $block */
+$item = $block->getItem();
+$column = $block->getColumn();
+?>
+<?php if ($item->getIsReply()==0):?>
+    <?= /* @noEscape */ __("No");?>
+<?php else:?>
+    <?= /* @noEscape */ __("Yes"); ?>
+<?php endif;?>
